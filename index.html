@@ -26,16 +26,18 @@
             </div>
         </script>
         <div id="placeholder"></div>
+        
         <script>
   var Module = {
-    locateFile: function (path) {
-      if (path.endsWith(".wasm")) {
+    locateFile: function (path, prefix) {
+      if (path.includes(".wasm")) {
         return "./face-wasm.wasm";
       }
-      return path;
+      return prefix + path;
     }
   };
 </script>
-        <script src="face.js"></script>
-    </body>
+
+<script src="face.js"></script>
+</body>
 </html>
